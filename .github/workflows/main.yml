@@ -24,7 +24,7 @@ jobs:
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
             Deployment status: ${{ job.status }}
-            Run: https://github.com/${{ github.repository }}/runs/${{ env.GITHUB_RUN_ID }}
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
 
         # with:
         #   to: 328778709
