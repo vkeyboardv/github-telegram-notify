@@ -16,8 +16,9 @@ jobs:
           to: 328778709
           token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
           message: |
-            Production Deployment - ${{ job.status }}
+            Deployment - ${{ job.status }}
             Service: ${{ github.repository }}
+            Env: ${{ github.head_ref }}
 
             Author: ${{ github.actor }}
             Run: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
