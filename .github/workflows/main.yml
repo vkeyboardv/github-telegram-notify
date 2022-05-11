@@ -13,7 +13,7 @@ jobs:
         if: always()
         uses: appleboy/telegram-action@master
         with:
-          to: -663184370
+          to: -1001527701953
           token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
           disable_web_page_preview: true
           message: |
