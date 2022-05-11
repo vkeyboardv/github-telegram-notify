@@ -17,8 +17,9 @@ jobs:
           token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
           message: |
             Deployment - ${{ job.status }}
+            Emoji - ${{ job.status == 'success' && '✅' || '🛑' }}
             Service: ${{ github.repository }}
-            Env: ${{ github.ref_name }}
+            Branch: ${{ github.ref_name }}
 
             Author: ${{ github.actor }}
             Run: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
