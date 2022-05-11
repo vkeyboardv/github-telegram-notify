@@ -9,12 +9,26 @@ jobs:
       - name: Try to fail
         run: exit 1
 
-      - name: send telegram message on push
+      - name: send deployment status to telegram
         if: always()
         uses: appleboy/telegram-action@master
         with:
           to: 328778709
           token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
           message: |
-            Job status: ${{ job.status }}
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+            Deployment status: ${{ job.status }}
+            Run: https://github.com/${{ github.repository }}/runs/${{ github.run_id }}
+
+        # with:
+        #   to: 328778709
+        #   token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
+        #   message: |
+        #     Job status: ${{ job.status }}
             
