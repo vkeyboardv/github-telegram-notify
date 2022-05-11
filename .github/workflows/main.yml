@@ -1,20 +1,17 @@
 name: telegram message
 on: [push]
-jobs:
 
-  build:
-    name: Build
+jobs:
+  telegram-notify:
+    name: Telegram Notify
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
+        if: always()
         uses: appleboy/telegram-action@master
         with:
           to: 328778709
           token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
           message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
+            Job status: ${{ job.status }}
             
-            Repository: ${{ github.repository }}
-            
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
