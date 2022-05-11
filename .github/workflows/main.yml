@@ -18,7 +18,7 @@ jobs:
           message: |
             Deployment - ${{ job.status }}
             Service: ${{ github.repository }}
-            Env: ${{ github.head_ref }}
+            Env: ${{ github.ref_name }}
 
             Author: ${{ github.actor }}
             Run: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
