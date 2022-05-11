@@ -15,9 +15,11 @@ jobs:
         with:
           to: 328778709
           token: 5373201124:AAGLLJo3BhDPsDI0h0c01JzTbRRdW0Gj4g0
+          disable_web_page_preview: true
           message: |
             ${{ job.status == 'success' && '🎉 A deploy job has succeeded!' || '🔴 A deploy job has failed!' }}
             Service: ${{ github.repository }}
             Branch: ${{ github.ref_name }}
 
             Author: ${{ github.actor }}
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
