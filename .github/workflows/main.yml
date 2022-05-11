@@ -6,8 +6,8 @@ jobs:
     name: Telegram Notify
     runs-on: ubuntu-latest
     steps:
-      - name: Try to fail
-        run: exit 1
+      # - name: Try to fail
+      #   run: exit 1
 
       - name: send deployment status to telegram
         if: always()
